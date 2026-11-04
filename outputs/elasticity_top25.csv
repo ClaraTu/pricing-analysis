@@ -1,0 +1,26 @@
+StockCode,Description,weeks,outlier_weeks_dropped,revenue,avg_price_cv,modal_distinct_prices,elasticity_avg_price,ci_low,ci_high,elasticity_modal_price,modal_se,r2,note
+22423,REGENCY CAKESTAND 3 TIER,53,0,174484.74,0.09,1,-4.08,-5.015,-3.146,,,0.786,"avg-price only: elastic; list price barely moved, so no clean modal estimate exists"
+23843,"PAPER CRAFT , LITTLE BIRDIE",1,0,168469.6,0.0,1,,,,,,,excluded: too few weeks / too little price variation to estimate
+85123A,WHITE HANGING HEART T-LIGHT HOLDER,53,0,104518.8,0.046,1,-2.009,-5.931,1.913,,,0.319,"avg-price only: elastic; list price barely moved, so no clean modal estimate exists"
+47566,PARTY BUNTING,53,0,99504.33,0.127,3,-2.883,-3.928,-1.839,-0.985,0.878,0.859,modal: inelastic (|e| < 1)
+85099B,JUMBO BAG RED RETROSPOT,53,0,94340.05,0.074,4,-4.527,-6.229,-2.826,-0.699,0.539,0.618,modal: inelastic (|e| < 1)
+23166,MEDIUM CERAMIC TOP STORAGE JAR,32,0,81700.92,0.091,3,-6.306,-9.675,-2.937,-1.75,0.828,0.867,modal: elastic (|e| > 1)
+23084,RABBIT NIGHT LIGHT,31,0,66964.99,0.351,3,-6.261,-7.705,-4.817,-3.728,1.479,0.895,modal: elastic (|e| > 1)
+22086,PAPER CHAIN KIT 50'S CHRISTMAS ,44,0,64952.29,0.327,5,-3.563,-5.113,-2.012,-2.381,0.786,0.885,modal: elastic (|e| > 1)
+84879,ASSORTED COLOUR BIRD ORNAMENT,53,0,59094.93,0.046,1,-8.82,-12.555,-5.085,,,0.59,"avg-price only: elastic; list price barely moved, so no clean modal estimate exists"
+79321,CHILLI LIGHTS,53,0,54117.76,0.304,4,-4.346,-5.944,-2.748,-0.998,0.757,0.789,modal: inelastic (|e| < 1)
+22502,PICNIC BASKET WICKER SMALL,40,1,51426.62,0.263,5,-0.743,-2.299,0.812,-0.589,0.643,0.785,modal: inelastic (|e| < 1)
+22197,POPCORN HOLDER,53,0,51354.02,0.181,3,-1.69,-3.025,-0.354,-1.147,0.787,0.633,modal: elastic (|e| > 1)
+23298,SPOTTY BUNTING,32,0,43182.83,0.098,1,-3.278,-4.796,-1.76,,,0.728,"avg-price only: elastic; list price barely moved, so no clean modal estimate exists"
+22386,JUMBO BAG PINK POLKADOT,53,0,42436.24,0.217,4,-3.631,-4.392,-2.869,-1.115,0.504,0.862,modal: elastic (|e| > 1)
+23203,JUMBO BAG VINTAGE DOILY ,32,0,42067.78,0.081,1,-2.076,-5.99,1.838,,,0.294,"avg-price only: elastic; list price barely moved, so no clean modal estimate exists"
+21137,BLACK RECORD COVER FRAME,49,0,40652.13,0.075,2,-10.92,-15.42,-6.419,,,0.602,"avg-price only: elastic; list price barely moved, so no clean modal estimate exists"
+23284,DOORMAT KEEP CALM AND COME IN,28,0,38166.64,0.229,4,,,,,,,excluded: too few weeks / too little price variation to estimate
+22720,SET OF 3 CAKE TINS PANTRY DESIGN ,50,0,38158.39,0.233,2,-2.125,-3.308,-0.942,,,0.881,"avg-price only: elastic; list price barely moved, so no clean modal estimate exists"
+22960,JAM MAKING SET WITH JARS,53,0,37128.88,0.09,4,-4.548,-6.557,-2.54,-1.151,0.678,0.487,modal: elastic (|e| > 1)
+20725,LUNCH BAG RED RETROSPOT,53,0,36042.01,0.127,2,-0.841,-2.447,0.765,,,0.311,"avg-price only: inelastic, but list price barely moved"
+82484,WOOD BLACK BOARD ANT WHITE FINISH,53,0,36030.22,0.157,3,-4.829,-5.884,-3.774,,,0.728,"avg-price only: elastic; list price barely moved, so no clean modal estimate exists"
+22178,VICTORIAN GLASS HANGING T-LIGHT,53,0,33187.97,0.191,4,-2.26,-3.749,-0.772,-1.023,0.673,0.438,modal: elastic (|e| > 1)
+22114,HOT WATER BOTTLE TEA AND SYMPATHY,27,0,33002.59,0.267,5,,,,,,,excluded: too few weeks / too little price variation to estimate
+22910,PAPER CHAIN KIT VINTAGE CHRISTMAS,39,0,32873.34,0.354,5,-3.52,-4.875,-2.166,-2.412,0.796,0.924,modal: elastic (|e| > 1)
+22112,CHOCOLATE HOT WATER BOTTLE,53,0,32866.18,0.234,3,-1.86,-2.864,-0.855,-0.209,0.786,0.85,modal: inelastic (|e| < 1)
