@@ -126,3 +126,77 @@ ends Dec 9, 2011).
   elasticity estimates.
 - Returns are excluded by design (R2); a returns analysis is a
   different project.
+
+## Week 2 — analysis and recommendation (2026-11-04)
+
+Run: `python scripts/week2_analysis.py` (reads the Week 1 `orders`
+table; needs only pandas + numpy). Outputs: 7 CSVs in `outputs/`.
+
+### What was done
+1. Revenue structure by month, country, price band.
+2. Price elasticity: weekly log-log OLS for the top 25 SKUs, month
+   dummies + trend. Two price measures: modal (list) price and
+   average (paid) price.
+3. Discount check: lines sold below the SKU's modal price vs at it.
+   No labelled discount field exists; below-modal is a proxy.
+4. Customer segments: identifiable customers only, split into spend
+   quartiles.
+
+### Headline findings
+- Top 25 SKUs: $1,556,724, 15.2% of product revenue.
+- Price bands: $2–5 drives 40.0% of revenue on 24.2% of units;
+  $1 and under drives 37.9% of units but only 10.8% of revenue.
+- Geography: UK is 85.2% of revenue; the next market
+  (Netherlands) is 2.8%.
+- Elasticity: modal-price estimates cluster near -1 (roughly
+  unit-elastic). Average-price estimates are far more negative
+  (-2 to -11) because weeks with heavy discounting have low average
+  prices AND high volume; they overstate responsiveness and must not
+  be quoted as causal.
+- Discount check: below-modal selling cost $132,114 across the top
+  25 SKUs (what-if upper bound: assumes the same units would have
+  sold at the modal price).
+- Customers: the top spend quartile (Q4, 1,084 customers) holds
+  79.1% of identifiable spend, averaging 10.4 orders; the bottom
+  quartile holds 2.2%. Identifiable customers cover 85.3% of
+  product revenue.
+- Data traps: 23843 (PAPER CRAFT, LITTLE BIRDIE) is a single bulk
+  order, not a pattern; 22502 (PICNIC BASKET WICKER SMALL) has 77%
+  of its revenue from two mis-keyed $649.50 lines, excluded from
+  any recommendation.
+
+### Recommendation (picked 2026-11-04): test a 5% price rise on 85099B
+**SKU:** 85099B, JUMBO BAG RED RETROSPOT. Revenue $94,340 (48,474
+units, 2,089 orders). List (modal) price $2.08; modal-price
+elasticity -0.699 (standard error 0.539, R2 0.618, 53 weeks, 4
+distinct list prices).
+
+**Math:** a 5% rise cuts quantity by about 3.5% (0.699 x 5%). New
+revenue = 1.05 x 0.965 x $94,340 = about $95,595, a gain of roughly
+**$1,255 (+1.3%)** on that year's volume.
+
+**Why this SKU:** the least-elastic modal estimate among
+high-revenue SKUs with a clean price history. 22112 has a smaller
+point estimate (-0.209) but on one-third the revenue and an even
+wider standard error (0.786).
+
+**Caveats (read before quoting the $1,255):**
+- The 95% confidence interval on the elasticity is [-1.76, +0.36],
+  so the gain is not statistically distinguishable from zero; at the
+  elastic end of the interval a 5% rise would lose money. This is a
+  test, not a forecast.
+- The estimate is observational: month and trend are controlled,
+  but promotions, stock-outs, and competitor prices are not in the
+  model.
+- 71.9% of this SKU's units (34,869 of 48,474) were sold below the
+  $2.08 list price, at an average of $1.77. A list-price test only
+  measures cleanly if discounting is held steady during the test;
+  otherwise the discount, not the list price, drives the result.
+  Below-modal selling on this SKU alone cost about $10,851 at the
+  what-if upper bound.
+- Do not use the average-price elasticity (-4.527) for this SKU: it
+  would imply a 5% rise loses about 19% of volume, but that number
+  mixes discount weeks with list-price changes.
+- A blanket 5% rise across SKUs is NOT supported: modal
+  elasticities cluster near -1, and none is precisely estimated
+  enough to prove inelasticity.
